@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+}
+.title-app {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 250px;
+    margin: 280px auto;
+    border: 1px solid black;
+}
+
+.title-app img {
+    width: 60px;
+}
+
+.title-app h1 {
+    font-size: 37px;
+    color: #ff00ff;
+}
+
+.start {
+    margin: auto;
+    width: 300px;
+    text-align: center;
+}
+
+.start button{
+    margin: 45px auto;
+    background-color: #49326B;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: inherit;
+    padding: 10px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}

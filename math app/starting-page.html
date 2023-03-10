@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Carme&family=Concert+One&family=Erica+One&family=Fredoka+One&family=Happy+Monkey&family=Karla:wght@500;800&family=Kodchasan:wght@600&family=Montserrat+Subrayada&family=Montserrat:wght@300;400;800&family=Nerko+One&family=Noto+Sans+JP:wght@900&family=Orbitron:wght@600&family=Play:wght@700&family=Poppins:wght@500;600&family=Press+Start+2P&family=Roboto+Flex:opsz,wght@8..144,600&family=Roboto+Mono&family=Roboto:wght@400;500&family=Rubik+Mono+One&family=Rubik+Vinyl&family=Russo+One&family=Signika:wght@700&family=Source+Sans+Pro:wght@600&family=Space+Mono:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="starting-page.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="title-app">
+        <img src="logo.png">
+        <h1>WICAIN</h1>
+    </div>
+
+    <div class="start">
+        <button type="button">Start</button>
+    </div>
+</body>
+
+<script>
+    document.getElementsByTagName("button")[0].onclick = gameLevel;
+
+    function gameLevel() {
+        window.location.href = "game-level.html";
+    }
+</script>
+</html>
