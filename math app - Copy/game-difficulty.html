@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game-level.css">
+    <script src="https://kit.fontawesome.com/ce744f4aea.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        i {
+            position: absolute;
+            top: 2%;
+            left: 89%;
+            font-size: 25px;
+            color: #ff0cffdf;
+        }
+    </style>
+    <div class="title">
+        <img src="logo.png">
+        <h3>WeBLOI</h3>
+    </div>
+    <i id="instruction" class="fa-solid fa-lightbulb"></i>
+    <div class="level">
+        <div class = "bg glitch" id="easy" onclick="showLevel(event)">EASY</div>
+        <div class="bg specificlvl" id="average">AVERAGE</div>
+        <div class="bg specificlvl" id="difficult">DIFFICULT</div>
+    </div>
+    <button id="back_btn">BACK</button>
+</body>
+
+<script>
+    const audio = new Audio('music/Start Menu.mp3');
+    const instruction_icon = document.getElementById("instruction");
+    const gameLevel = JSON.parse(localStorage.getItem('level'));
+    audio.loop = true;
+    audio.play();
+
+    document.getElementById("back_btn").onclick = () => {
+        window.location.href =  "index.html";
+    };
+
+    if(gameLevel) {
+        gameLevel.forEach(element => {
+            const level = document.querySelector(`#${String(element)}`);
+            level.classList.add("glitch");
+            level.onclick = showLevel;
+            level.style.filter = 'brightness(1)';
+        });
+    }
+
+    function showLevel(event) {
+        const current = event.target.id;
+
+        const button = document.getElementById(`${current}`);
+        button.classList.add("slide");
+
+        setTimeout(() => {
+            button.classList.remove("slide");
+            setTimeout(() => {
+                window.location.href = `game-level.html`;
+                localStorage.setItem('currentLev', current);}, 300)
+        }, 300 );
+    }
+
+    instruction_icon.onclick = () => {
+        window.location.href = "page1.html";
+    };
+</script>
+</html>

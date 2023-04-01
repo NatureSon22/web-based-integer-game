@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game-level.css">
+    <script src="https://kit.fontawesome.com/ce744f4aea.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+      <style>
+        i {
+            position: absolute;
+            top: 2%;
+            left: 89%;
+            font-size: 25px;
+            color: #ff0cffdf;
+        }
+    </style>
+    <div class="title">
+        <img src="logo.png">
+        <h3>WeBLOI</h3>
+    </div>
+    <i id="instruction" class="fa-solid fa-lightbulb"></i>
+    <div class="level">
+        <div class = "effect glitch" id="add" onclick="showInterface(event)">ADDITION</div>
+        <div class="specificlvl" id="subtract">SUBTRACT</div>
+        <div class="specificlvl" id="multiply">MULTIPLY</div>
+        <div class="specificlvl" id="divide">DIVIDE</div>
+    </div>
+    <button id="back_btn">BACK</button>
+</body>
+
+<script>
+const current = localStorage.getItem("currentLev")
+const arr = JSON.parse(localStorage.getItem(`${current}`)); // parse the stored value as JSO;
+const audio = new Audio('music/Start Menu.mp3');
+audio.loop = true;
+audio.play();
+
+if (arr) {
+  arr.forEach((item) => {
+    if (item !== "") {
+      const level = document.querySelector(`#${String(item)}`);
+      level.classList.add("effect");
+      level.classList.add("glitch");
+      level.onclick = showInterface;
+      level.style.filter = 'brightness(1)';
+    }
+  })
+}
+
+function showInterface(event) {
+  const difficultyLevel = event.target.id;
+  const url = `game-interface.html?difficulty=${difficultyLevel}&current=${current}`;
+  window.location.href = url;
+} 
+
+document.getElementById("back_btn").onclick = goBack;
+function goBack() {
+  window.location.href = "game-difficulty.html";
+}
+
+document.getElementById("instruction").onclick = () => {
+  window.location.href = "page2.html";
+}; 
+
+// // Save the current value to local storage when first retrieved
+// localStorage.setItem('current', JSON.stringify(arr || []));
+
+</script>
+</html>

@@ -1,0 +1,21 @@
+button {
+    position: absolute;
+    border: none;
+    top: 450px;
+    left: 90px;
+    background-color:  #49326B;
+    color:#F573C3;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 6px 0  #f704f7;
+    border: 1px solid  #cb18cb;
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+button:active {
+    box-shadow: none;
+}
